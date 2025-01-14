@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be visible.
+  </div>
+  <div id="myDiv2"></div>
+  <script>
+    //Correct way to use innerHTML after element is created
+    const div2 = document.getElementById('myDiv2');
+    if (div2) {
+        div2.innerHTML = "This text is now visible";
+    } else {
+        console.error("Element with id 'myDiv2' not found.");
+    }
+  </script>
+</body>
+</html>
